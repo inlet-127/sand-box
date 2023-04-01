@@ -13,7 +13,7 @@ public interface IEnumBase {
 			throw new AssertionError();
 		}
 		
-		E[] elements = obj.length == 0 ? (E[]) obj.getClass().getEnumConstants() : obj;
+		E[] elements = obj.length == 0 ? (E[]) obj.getClass().getComponentType().getEnumConstants() : obj;
 
 		for (E elem : elements) {
 			if (elem.getKey().equals(key)) {
